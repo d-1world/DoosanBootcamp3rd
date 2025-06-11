@@ -10,7 +10,7 @@ from ultralytics import YOLO
 import numpy as np
 
 
-PACKAGE_NAME = "pick_and_place_text"
+PACKAGE_NAME = "pick_and_place_voice"
 PACKAGE_PATH = get_package_share_directory(PACKAGE_NAME)
 
 YOLO_MODEL_FILENAME = "best.pt"

@@ -9,7 +9,7 @@ from object_detection.realsense import ImgNode
 from object_detection.yolo import YoloModel
 
 
-PACKAGE_NAME = 'pick_and_place_text'
+PACKAGE_NAME = 'pick_and_place_voice'
 PACKAGE_PATH = get_package_share_directory(PACKAGE_NAME)
 
 
