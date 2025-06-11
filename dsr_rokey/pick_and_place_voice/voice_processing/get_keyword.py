@@ -105,7 +105,7 @@ class GetKeyword(Node):
         self.get_keyword_srv = self.create_service(
             Trigger, "get_keyword", self.get_keyword
         )
-        self.wakeup_word = WakeupWord(mic_config.buffer_size)
+        # self.wakeup_word = WakeupWord(mic_config.buffer_size)
 
     def extract_keyword(self, output_message):
         response = self.lang_chain.invoke({"user_input": output_message})
@@ -122,17 +122,18 @@ class GetKeyword(Node):
         return object
     
     def get_keyword(self, request, response):  # 요청과 응답 객체를 받아야 함
-        try:
-            print("open stream")
-            self.mic_controller.open_stream()
-            self.wakeup_word.set_stream(self.mic_controller.stream)
-        except OSError:
-            self.get_logger().error("Error: Failed to open audio stream")
-            self.get_logger().error("please check your device index")
-            return None
+        # try:
+        #     print("open stream")
+        #     self.mic_controller.open_stream()
+        #     self.wakeup_word.set_stream(self.mic_controller.stream)
+        # except OSError:
+        #     self.get_logger().error("Error: Failed to open audio stream")
+        #     self.get_logger().error("please check your device index")
+        #     return None
 
-        while not self.wakeup_word.is_wakeup():
-            pass
+        input("press enter to start")
+        # while not self.wakeup_word.is_wakeup():
+        #     pass
 
         # STT --> Keword Extract --> Embedding
         output_message = self.stt.speech2text()
